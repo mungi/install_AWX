@@ -11,6 +11,6 @@ sudo pip install -U pip docker-compose==1.23.2
 
 git clone https://github.com/ansible/awx.git
 cd awx/installer/
-mkdir -p /var/awx
+sudo mkdir -p -m 1777 /var/awx
 sed -i 's/\/tmp\/pgdocker/\/var\/awx\/pgdocker/g' inventory
 ansible-playbook -i inventory install.yml -b
